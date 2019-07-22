@@ -8,8 +8,10 @@ csv_test_file_name = 'test.csv'
 
 
 def main():
-    training_data = load_data_from_csv(csv_train_file_name, True)
-    test_data = load_data_from_csv(csv_test_file_name, True)
+    training_data = load_data_from_csv(csv_train_file_name)
+    test_data = load_data_from_csv(csv_test_file_name)
+    training_data = training_data.fillna(1)
+    test_data = test_data.fillna(1)
 
     X = training_data[features]
     y = training_data.Survived
