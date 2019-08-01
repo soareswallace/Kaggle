@@ -1,13 +1,14 @@
 from DataProcessing import load_data_from_csv, plot_graph, drop_selected_columns, generate_csv
 from ModelGenerator import generate_model
-features = ['Pclass', 'Age', 'SibSp', 'Parch']
+features = ['Parch', 'Fare']
 csv_train_file_name = 'train.csv'
 csv_test_file_name = 'test.csv'
-dropped_columns = ['PassengerId', 'Name', 'Sex', 'Ticket', 'Fare', 'Cabin', 'Embarked']
+dropped_columns = ['PassengerId', 'Name', 'Sex', 'Ticket', 'Cabin', 'Embarked', 'Pclass', 'Age', 'SibSp']
 
 
 def main():
     training_data = load_data_from_csv(csv_train_file_name)
+
     test_data = load_data_from_csv(csv_test_file_name)
     # plot_graph(training_data)
 
